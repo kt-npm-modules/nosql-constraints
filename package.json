@@ -1,7 +1,7 @@
 {
 	"name": "@ktarmyshov/nosql-constraints",
 	"description": "Helpers to manage constrants (i.e. cascade delete) in a NoSQL database",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"license": "MIT",
 	"author": {
 		"name": "Konstantin Tarmyshov",
