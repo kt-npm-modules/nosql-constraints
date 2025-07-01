@@ -1,5 +1,43 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.3
+
+### Patch Changes
+
+- a60b530: dependabot: directory '/', update @ktarmyshov/digraph-js
+- a60b530: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- a60b530: dependabot: directory '/', update @types/node
+- a60b530: dependabot: directory '/', update eslint
+- a60b530: dependabot: directory '/', update zod
+- accbd25: dependabot: directory '/', update @types/node
+- accbd25: dependabot: directory '/', update @vitest/coverage-istanbul
+- accbd25: dependabot: directory '/', update @vitest/coverage-v8
+- accbd25: dependabot: directory '/', update typescript-eslint
+- accbd25: dependabot: directory '/', update vitest
+- accbd25: dependabot: directory '/', update zod
+- 8917f5a: dependabot: directory '/', update @eslint/compat
+- 8917f5a: dependabot: directory '/', update @types/node
+- 8917f5a: dependabot: directory '/', update @vitest/coverage-istanbul
+- 8917f5a: dependabot: directory '/', update @vitest/coverage-v8
+- 8917f5a: dependabot: directory '/', update eslint
+- 8917f5a: dependabot: directory '/', update typescript-eslint
+- 8917f5a: dependabot: directory '/', update vitest
+- 8917f5a: dependabot: directory '/', update zod
+- 360229d: dependabot: directory '/', update @changesets/cli
+- 360229d: dependabot: directory '/', update @types/lodash
+- 360229d: dependabot: directory '/', update @types/node
+- 360229d: dependabot: directory '/', update @vitest/coverage-istanbul
+- 360229d: dependabot: directory '/', update @vitest/coverage-v8
+- 360229d: dependabot: directory '/', update typescript-eslint
+- 360229d: dependabot: directory '/', update vitest
+- 360229d: dependabot: directory '/', update zod
+- 032fc73: dependabot: directory '/', update @eslint/compat
+- 032fc73: dependabot: directory '/', update @types/lodash
+- 032fc73: dependabot: directory '/', update @types/node
+- 032fc73: dependabot: directory '/', update eslint
+- 032fc73: dependabot: directory '/', update prettier
+- 032fc73: dependabot: directory '/', update typescript-eslint
+
 ## 0.3.2
 
 ### Patch Changes
