@@ -67,7 +67,7 @@
 		"lodash": "^4.17.21",
 		"safe-stable-stringify": "^2.5.0",
 		"type-fest": "^4.40.0",
-		"zod": "^3.24.4"
+		"zod": "^4.0.5"
 	},
 	"engines": {
 		"node": ">=20.0.0"
