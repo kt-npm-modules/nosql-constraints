@@ -158,4 +158,36 @@ describe('Zod Adapter implementation', () => {
 			]);
 		});
 	});
+	describe('Error Handling', () => {
+		it('should handle unsupported schema types', () => {
+			// This tests the unsupported schema type error (line 133)
+			// Create a mock schema that doesn't match any known types
+			const mockSchema = {
+				constructor: { name: 'UnknownZodType' },
+				def: {}
+			} as unknown as z.ZodType;
+
+			expect(() => {
+				const adapter = zod(mockSchema);
+				adapter.extractChunks();
+			}).toThrow('Unsupported schema type: UnknownZodType');
+		});
+
+		it('should handle malformed ZodPipe schemas', () => {
+			// This tests the ZodPipe error handling (line 121)
+			// Create a mock ZodPipe without the expected properties
+			const mockZodPipe = {
+				constructor: { name: 'ZodPipe' },
+				def: {
+					// Missing left, in, input, schema properties
+					someOtherProperty: 'value'
+				}
+			} as unknown as z.ZodType;
+
+			expect(() => {
+				const adapter = zod(mockZodPipe);
+				adapter.extractChunks();
+			}).toThrow('ZodPipe input schema not found');
+		});
+	});
 });

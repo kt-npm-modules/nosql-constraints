@@ -5,23 +5,19 @@ import {
 	ZodDate,
 	ZodDefault,
 	ZodDiscriminatedUnion,
-	ZodEffects,
 	ZodEnum,
 	ZodLiteral,
 	ZodNumber,
 	ZodObject,
 	ZodOptional,
-	ZodRawShape,
-	ZodSchema,
 	ZodString,
 	ZodType,
-	ZodTypeAny,
 	ZodUnion
 } from 'zod';
 import { DocumentSchemaAdapter, DocumentSchemaChunk, DocumentSchemaChunkType } from './schema';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const _DocumentSchemaChunkType2ZodType: { [key: string]: typeof ZodType<any, any, any> } = {
+const _DocumentSchemaChunkType2ZodType: { [key: string]: any } = {
 	string: ZodString,
 	number: ZodNumber,
 	boolean: ZodBoolean,
@@ -29,13 +25,13 @@ const _DocumentSchemaChunkType2ZodType: { [key: string]: typeof ZodType<any, any
 	any: ZodAny
 };
 
-export function zod(schema: ZodSchema): DocumentSchemaAdapter {
+export function zod(schema: ZodType): DocumentSchemaAdapter {
 	return new ZodAdapter(schema);
 }
 
 class ZodAdapter implements DocumentSchemaAdapter {
-	readonly #schema: ZodSchema;
-	constructor(schema: ZodSchema) {
+	readonly #schema: ZodType;
+	constructor(schema: ZodType) {
 		this.#schema = schema;
 	}
 	extractChunks(): DocumentSchemaChunk[] {
@@ -46,8 +42,13 @@ class ZodAdapter implements DocumentSchemaAdapter {
 function extractChunks(
 	propertyKey: string | undefined,
 	propertyPath: string | undefined,
-	schema: ZodSchema
+	schema: ZodType
 ): [string | undefined, DocumentSchemaChunk[]] {
+	// Handle null/undefined schema
+	if (!schema) {
+		throw new Error(`Schema is null or undefined at ${propertyPath} with key ${propertyKey}`);
+	}
+
 	// First check primitive types
 	for (const primitiveType of Object.keys(_DocumentSchemaChunkType2ZodType)) {
 		const zodType = _DocumentSchemaChunkType2ZodType[primitiveType];
@@ -61,8 +62,8 @@ function extractChunks(
 	if (schema instanceof ZodUnion || schema instanceof ZodDiscriminatedUnion) {
 		return [
 			propertyKey,
-			schema.options
-				.map((option: ZodSchema) => extractChunks(propertyKey, propertyPath, option)[1])
+			(schema.options as ZodType[])
+				.map((option: ZodType) => extractChunks(propertyKey, propertyPath, option)[1])
 				.flat()
 		];
 	} else if (schema instanceof ZodObject) {
@@ -72,13 +73,13 @@ function extractChunks(
 	} else if (schema instanceof ZodArray) {
 		return [
 			propertyKey ? `${propertyKey}[]` : '[]',
-			extractChunksFromArray(propertyKey, propertyPath, schema)
+			extractChunksFromArray(propertyKey, propertyPath, schema as ZodArray<ZodType>)
 		];
 	} else if (schema instanceof ZodOptional) {
 		const [chunkPropertyKey, chunkPropertyValue] = extractChunks(
 			propertyKey,
 			propertyPath,
-			schema.unwrap()
+			schema.unwrap() as ZodType
 		);
 		return [chunkPropertyKey, chunkPropertyValue.map((chunk) => ({ ...chunk, optional: true }))];
 	} else if (schema instanceof ZodEnum) {
@@ -96,34 +97,57 @@ function extractChunks(
 		const [chunkPropertyKey, chunkPropertyValue] = extractChunks(
 			propertyKey,
 			propertyPath,
-			schema.removeDefault()
+			schema.def.innerType as ZodType
 		);
 		return [
 			chunkPropertyKey,
-			chunkPropertyValue.map((chunk) => ({ ...chunk, default: schema._def.defaultValue() }))
+			chunkPropertyValue.map((chunk) => ({
+				...chunk,
+				default:
+					typeof schema.def.defaultValue === 'function'
+						? (schema.def.defaultValue as () => unknown)()
+						: schema.def.defaultValue
+			}))
 		];
-	} else if (schema instanceof ZodEffects) {
+	} else if (schema.constructor?.name === 'ZodPipe') {
+		// Handle ZodPipe (created by .transform() in Zod v4)
+		const pipeSchema = schema as unknown as { def: Record<string, unknown> };
+		const pipeDef = pipeSchema.def;
+
+		// Try different possible properties for the input schema
+		const inputSchema = pipeDef.left || pipeDef.in || pipeDef.input || pipeDef.schema;
+
+		if (!inputSchema) {
+			throw new Error(
+				`ZodPipe input schema not found at ${propertyPath} with key ${propertyKey}. Available properties: ${Object.keys(pipeDef).join(', ')}`
+			);
+		}
+
 		const [chunkPropertyKey, chunkPropertyValue] = extractChunks(
 			propertyKey,
 			propertyPath,
-			schema.innerType()
+			inputSchema as ZodType
 		);
 		return [chunkPropertyKey, chunkPropertyValue];
 	} else {
 		throw new Error(
-			`Unsupported schema type: ${schema.constructor.name} at ${propertyPath} with key ${propertyKey}`
+			`Unsupported schema type: ${schema.constructor?.name || 'Unknown'} at ${propertyPath} with key ${propertyKey}`
 		);
 	}
 }
 
 function extractChunkFromObject(
 	propertyPath: string | undefined,
-	schema: ZodObject<ZodRawShape>
+	schema: ZodObject<Record<string, ZodType>>
 ): DocumentSchemaChunk {
 	const properties: Record<string, DocumentSchemaChunk[]> = {};
 	for (const [key, value] of Object.entries(schema.shape)) {
 		const _propertyPath = propertyPath ? `${propertyPath}.${key}` : key;
-		const [chunkPropertyKey, chunkPropertyValue] = extractChunks(key, _propertyPath, value);
+		const [chunkPropertyKey, chunkPropertyValue] = extractChunks(
+			key,
+			_propertyPath,
+			value as ZodType
+		);
 		properties[chunkPropertyKey!] = chunkPropertyValue;
 	}
 	return {
@@ -136,7 +160,7 @@ function extractChunkFromObject(
 function extractChunksFromArray(
 	propertyKey: string | undefined,
 	propertyPath: string | undefined,
-	schema: ZodArray<ZodTypeAny>
+	schema: ZodArray<ZodType>
 ): DocumentSchemaChunk[] {
 	const _propertyKey = propertyKey ? `${propertyKey}[]` : '[]';
 	const _propertyPath = propertyPath ? `${propertyPath}[]` : '[]';
