@@ -1,5 +1,22 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.5
+
+### Patch Changes
+
+- 6c85e6d: dependabot: directory '/', update @changesets/cli
+- 6c85e6d: dependabot: directory '/', update @eslint/compat
+- 6c85e6d: dependabot: directory '/', update @ktarmyshov/digraph-js
+- 6c85e6d: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 6c85e6d: dependabot: directory '/', update @types/node
+- 6c85e6d: dependabot: directory '/', update eslint-config-prettier
+- 6c85e6d: dependabot: directory '/', update eslint
+- 6c85e6d: dependabot: directory '/', update publint
+- 6c85e6d: dependabot: directory '/', update type-fest
+- 6c85e6d: dependabot: directory '/', update typescript-eslint
+- 6c85e6d: dependabot: directory '/', update typescript
+- 6c85e6d: dependabot: directory '/', update zod
+
 ## 0.3.4
 
 ### Patch Changes
