@@ -1,5 +1,15 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.6
+
+### Patch Changes
+
+- 743c5f1: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 743c5f1: dependabot: directory '/', update @types/node
+- 743c5f1: dependabot: directory '/', update eslint
+- 743c5f1: dependabot: directory '/', update typescript-eslint
+- 743c5f1: dependabot: directory '/', update typescript
+
 ## 0.3.5
 
 ### Patch Changes
