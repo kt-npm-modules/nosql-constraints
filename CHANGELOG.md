@@ -1,5 +1,29 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.6
+
+### Patch Changes
+
+- 743c5f1: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 743c5f1: dependabot: directory '/', update @types/node
+- 743c5f1: dependabot: directory '/', update eslint
+- 743c5f1: dependabot: directory '/', update typescript-eslint
+- 743c5f1: dependabot: directory '/', update typescript
+- d471ea6: dependabot: directory '/', update @types/node
+- d471ea6: dependabot: directory '/', update publint
+- d471ea6: dependabot: directory '/', update typescript-eslint
+- d471ea6: dependabot: directory '/', update zod
+- 239acec: dependabot: directory '/', update @types/node
+- 239acec: dependabot: directory '/', update eslint
+- 239acec: dependabot: directory '/', update type-fest
+- 239acec: dependabot: directory '/', update typescript-eslint
+- 0b87664: dependabot: directory '/', update @types/node
+- 0b87664: dependabot: directory '/', update @vitest/coverage-istanbul
+- 0b87664: dependabot: directory '/', update @vitest/coverage-v8
+- 0b87664: dependabot: directory '/', update publint
+- 0b87664: dependabot: directory '/', update typescript-eslint
+- 0b87664: dependabot: directory '/', update vitest
+
 ## 0.3.5
 
 ### Patch Changes
