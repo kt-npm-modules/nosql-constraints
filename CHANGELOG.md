@@ -1,5 +1,18 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.8
+
+### Patch Changes
+
+- 2043ccb: dependabot: directory '/', update @ktarmyshov/digraph-js
+- 2043ccb: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 2043ccb: dependabot: directory '/', update @vitest/coverage-istanbul
+- 2043ccb: dependabot: directory '/', update @vitest/coverage-v8
+- 2043ccb: dependabot: directory '/', update prettier
+- 2043ccb: dependabot: directory '/', update type-fest
+- 2043ccb: dependabot: directory '/', update typescript-eslint
+- 2043ccb: dependabot: directory '/', update vitest
+
 ## 0.3.7
 
 ### Patch Changes
