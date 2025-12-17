@@ -1,5 +1,88 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.7
+
+### Patch Changes
+
+- e59971f: dependabot: directory '/', update @eslint/compat
+- e59971f: dependabot: directory '/', update @ktarmyshov/digraph-js
+- e59971f: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- e59971f: dependabot: directory '/', update @types/node
+- e59971f: dependabot: directory '/', update @vitest/coverage-istanbul
+- e59971f: dependabot: directory '/', update @vitest/coverage-v8
+- e59971f: dependabot: directory '/', update eslint
+- e59971f: dependabot: directory '/', update rimraf
+- e59971f: dependabot: directory '/', update vitest
+- 95a016c: dependabot: directory '/', update @vitest/coverage-istanbul
+- 95a016c: dependabot: directory '/', update @vitest/coverage-v8
+- 95a016c: dependabot: directory '/', update eslint
+- 95a016c: dependabot: directory '/', update type-fest
+- 95a016c: dependabot: directory '/', update typescript-eslint
+- 95a016c: dependabot: directory '/', update vitest
+- e271518: dependabot: directory '/', update @eslint/compat
+- e271518: dependabot: directory '/', update @types/node
+- e271518: dependabot: directory '/', update @vitest/coverage-istanbul
+- e271518: dependabot: directory '/', update @vitest/coverage-v8
+- e271518: dependabot: directory '/', update typescript-eslint
+- e271518: dependabot: directory '/', update vitest
+- ec42a2a: dependabot: directory '/', update @vitest/coverage-istanbul
+- ec42a2a: dependabot: directory '/', update @vitest/coverage-v8
+- ec42a2a: dependabot: directory '/', update rimraf
+- ec42a2a: dependabot: directory '/', update typescript-eslint
+- ec42a2a: dependabot: directory '/', update vitest
+- bd95c27: dependabot: directory '/', update @types/lodash
+- bd95c27: dependabot: directory '/', update @vitest/coverage-istanbul
+- bd95c27: dependabot: directory '/', update @vitest/coverage-v8
+- bd95c27: dependabot: directory '/', update vitest
+- 48af765: dependabot: directory '/', update @changesets/cli
+- 48af765: dependabot: directory '/', update @vitest/coverage-istanbul
+- 48af765: dependabot: directory '/', update @vitest/coverage-v8
+- 48af765: dependabot: directory '/', update prettier
+- 48af765: dependabot: directory '/', update typescript-eslint
+- 48af765: dependabot: directory '/', update vitest
+- 48af765: dependabot: directory '/', update zod
+
+## 0.3.6
+
+### Patch Changes
+
+- 743c5f1: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 743c5f1: dependabot: directory '/', update @types/node
+- 743c5f1: dependabot: directory '/', update eslint
+- 743c5f1: dependabot: directory '/', update typescript-eslint
+- 743c5f1: dependabot: directory '/', update typescript
+- d471ea6: dependabot: directory '/', update @types/node
+- d471ea6: dependabot: directory '/', update publint
+- d471ea6: dependabot: directory '/', update typescript-eslint
+- d471ea6: dependabot: directory '/', update zod
+- 239acec: dependabot: directory '/', update @types/node
+- 239acec: dependabot: directory '/', update eslint
+- 239acec: dependabot: directory '/', update type-fest
+- 239acec: dependabot: directory '/', update typescript-eslint
+- 0b87664: dependabot: directory '/', update @types/node
+- 0b87664: dependabot: directory '/', update @vitest/coverage-istanbul
+- 0b87664: dependabot: directory '/', update @vitest/coverage-v8
+- 0b87664: dependabot: directory '/', update publint
+- 0b87664: dependabot: directory '/', update typescript-eslint
+- 0b87664: dependabot: directory '/', update vitest
+
+## 0.3.5
+
+### Patch Changes
+
+- 6c85e6d: dependabot: directory '/', update @changesets/cli
+- 6c85e6d: dependabot: directory '/', update @eslint/compat
+- 6c85e6d: dependabot: directory '/', update @ktarmyshov/digraph-js
+- 6c85e6d: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 6c85e6d: dependabot: directory '/', update @types/node
+- 6c85e6d: dependabot: directory '/', update eslint-config-prettier
+- 6c85e6d: dependabot: directory '/', update eslint
+- 6c85e6d: dependabot: directory '/', update publint
+- 6c85e6d: dependabot: directory '/', update type-fest
+- 6c85e6d: dependabot: directory '/', update typescript-eslint
+- 6c85e6d: dependabot: directory '/', update typescript
+- 6c85e6d: dependabot: directory '/', update zod
+
 ## 0.3.4
 
 ### Patch Changes
