@@ -1,5 +1,11 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.9
+
+### Patch Changes
+
+- ae220aa: dependabot: directory '/', update typescript-eslint
+
 ## 0.3.8
 
 ### Patch Changes
