@@ -1,5 +1,34 @@
 # @ktarmyshov/nosql-constraints
 
+## 0.3.10
+
+### Patch Changes
+
+- 4d51107: dependabot: directory '/', update @ktarmyshov/digraph-js
+- 4d51107: dependabot: directory '/', update @ktarmyshov/typesafe-utilities
+- 4d51107: dependabot: directory '/', update typescript-eslint
+- 4d51107: dependabot: directory '/', update zod
+- b1e4733: dependabot: directory '/', update @eslint/compat
+- b1e4733: dependabot: directory '/', update @types/lodash
+- b1e4733: dependabot: directory '/', update @types/node
+- b1e4733: dependabot: directory '/', update typescript-eslint
+- f83e9dd: dependabot: directory '/', update @types/node
+- f83e9dd: dependabot: directory '/', update @vitest/coverage-istanbul
+- f83e9dd: dependabot: directory '/', update @vitest/coverage-v8
+- f83e9dd: dependabot: directory '/', update prettier
+- f83e9dd: dependabot: directory '/', update type-fest
+- f83e9dd: dependabot: directory '/', update typescript-eslint
+- f83e9dd: dependabot: directory '/', update vitest
+- e6d8ec7: dependabot: directory '/', update @types/node
+- e6d8ec7: dependabot: directory '/', update @vitest/coverage-istanbul
+- e6d8ec7: dependabot: directory '/', update @vitest/coverage-v8
+- e6d8ec7: dependabot: directory '/', update lodash
+- e6d8ec7: dependabot: directory '/', update prettier
+- e6d8ec7: dependabot: directory '/', update publint
+- e6d8ec7: dependabot: directory '/', update typescript-eslint
+- e6d8ec7: dependabot: directory '/', update vitest
+- e6d8ec7: dependabot: directory '/', update zod
+
 ## 0.3.9
 
 ### Patch Changes
